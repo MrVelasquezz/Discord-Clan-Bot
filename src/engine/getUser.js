@@ -15,7 +15,7 @@ module.exports = async (uname) => {
             domain: '.excalibur-craft.ru'
         })
 
-        await page.goto(`https://excalibur-craft.ru/index.php?do=profile&name=${u}`)
+        await page.goto(`https://excalibur-craft.ru/index.php?do=profile&name=${uname}`)
 
         await page.waitForTimeout(1000)
 

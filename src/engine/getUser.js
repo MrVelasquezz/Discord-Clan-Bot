@@ -1,6 +1,10 @@
 const pup = require('puppeteer')
 
 module.exports = async (uname) => {
+    let u = uname
+    if(u.length < 3){
+        u = ''
+    }
     const browser = await pup.launch()
     const page = await browser.newPage()
 
@@ -15,7 +19,7 @@ module.exports = async (uname) => {
         domain: '.excalibur-craft.ru'
     })
 
-    await page.goto(`https://excalibur-craft.ru/index.php?do=profile&name=${uname}`)
+    await page.goto(`https://excalibur-craft.ru/index.php?do=profile&name=${u}`)
 
     await page.waitForTimeout(1000)
 
